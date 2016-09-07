@@ -1,0 +1,29 @@
+{
+  "name": "urlshrinkserv",
+  "version": "1.0.0",
+  "description": "freecodecamp solution to URL shortener service",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gussamer/urlshrinkserv.git"
+  },
+  "keywords": [
+    "url",
+    "shrinker"
+  ],
+  "author": "Angus Alves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gussamer/urlshrinkserv/issues"
+  },
+  "homepage": "https://github.com/gussamer/urlshrinkserv#readme",
+  "engines": {
+    "node": "^4.4.5"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
