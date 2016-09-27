@@ -1,8 +1,6 @@
 var express = require('express');
 var mongo = require('mongodb').MongoClient;
-var mongoUname = 'gussamer';
-var mongoPword = 'V0idnu11';
-var mongoURL = 'mongodb://'+encodeURIComponent(mongoUname)+':'+encodeURIComponent(mongoPword)+'@ds019806.mlab.com:19806/urlshrinker';
+var mongoURL = process.env.MONGOLAB_URI;
 var app = express();
 var lp = process.env.PORT || 8080;
 
@@ -33,7 +31,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/new/:url', function(req, res){
-  res.send(JSON.stringify(shurlWorker('insertshurl',req.params.url)));
+  res.json(JSON.stringify(shurlWorker('insertshurl',req.params.url)));
 });
 
 app.listen(lp, function(){
