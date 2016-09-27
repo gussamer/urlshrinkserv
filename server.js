@@ -18,6 +18,7 @@ var shurlWorker = function(op,input){
         shurls.insert(inputString,function(inserr,data){
           if(inserr) console.log(inserr);
           mongo.close();
+          return data;
         });
       }else if(op==''){
         
@@ -31,7 +32,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/new/:url', function(req, res){
-  shurlWorker('insertshurl',req.params.url);
+  res.send(JSON.stringify(('insertshurl',req.params.url)));
 });
 
 app.listen(lp, function(){
