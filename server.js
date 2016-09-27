@@ -15,6 +15,7 @@ var shurlWorker = function(op,input){
       var shurls = db.collection('shrunkurls');
       if(op=='insertshurl'){
         var inputString = JSON.stringify(input);
+        console.log(inputString);
         shurls.insert(inputString,function(inserr,data){
           if(inserr) console.log(inserr);
           mongo.close();
