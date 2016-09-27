@@ -32,7 +32,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/new/:url', function(req, res){
-  res.send(JSON.stringify(('insertshurl',req.params.url)));
+  res.send(JSON.stringify(shurlWorker('insertshurl',req.params.url)));
 });
 
 app.listen(lp, function(){
