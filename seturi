@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+if [ $# -ne 2 ]; then
+    echo $0: argument usage: seturi [Mongo User Name] [Mongo Password]
+    echo "Enter the db user name"
+    read uname
+    echo "Enter the db user password"
+    read pword
+else
+    uname=$1
+    pword=$2
+fi
+export MONGOLAB_URI="mongodb://$uname:$pword@ds051523.mlab.com:51523/urlshrinker"
+echo "Set MONGOLAB_URI to:"
+echo $MONGOLAB_URI
