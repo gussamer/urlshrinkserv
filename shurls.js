@@ -52,7 +52,7 @@ Shurls.createShurl = function(url,callback){
                     console.log(err);
                     callback(err);
                 }else{
-                    db.collection("shurls").insert({"shurl":nextShurl,"url":url},function(err,result){
+                    db.collection("shurls").insertOne({"shurl":nextShurl,"url":url},function(err,result){
                         if(err){
                             console.log("[-]ShurlClient.createShurl: Failed to create shurl");
                             console.log(err);
