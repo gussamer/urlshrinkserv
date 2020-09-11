@@ -33,8 +33,16 @@ app.get(/\/new\/[.]*/, function(req, res){
   console.log(req.path);
   var url = /(\/new\/)(.*)/.exec(req.path)[2];
   console.log(url);
-  if(/(https?:\/\/)(www\.)?(.*\..*)(:\d*)?/.test(url)){
-    shurls.createShurl(url,function(err,result){
+  var urlToShrink = /(https?:\/\/)?(www\.)?(.*\..*)(:\d*)?/.exec(url);
+  var shurl = '';
+  console.log(urlToShrink);
+  if(urlToShrink[1]) shurl += urlToShrink[1];
+  else shurl += 'https://';
+  shurl += urlToShrink[2];
+  shurl += urlToShrink[3];
+  console.log(shurl);
+  if(/(https?:\/\/)(www\.)?(.*\..*)(:\d*)?/.test(shurl)){
+    shurls.createShurl(shurl,function(err,result){
       if(err){
         console.log('[-]server.app: Creation of Shurl failed');
         console.log(err);
@@ -42,11 +50,11 @@ app.get(/\/new\/[.]*/, function(req, res){
       }else{
         console.log('[-]server.app: Created Shurl');
         console.log(result);
-        res.json({"original_url":url,"short_url":req.hostname+'/'+result.ops[0].shurl});
+        res.json({"original_url":shurl,"short_url":req.hostname+'/'+result.ops[0].shurl});
       }
     });
   }else{
-    console.log('[-]server.app: Received malformed url: '+url);
+    console.log('[-]server.app: Received malformed url: '+shurl);
     sendDescription(res);
   }
 });
