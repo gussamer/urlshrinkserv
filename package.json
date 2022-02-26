@@ -27,6 +27,6 @@
     "express": "^4.14.0",
     "mongodb": "^3.6.4",
     "mongodb-autoincrement": "^1.0.1",
-    "mongoose": "^5.11.18"
+    "mongoose": "^5.13.9"
   }
 }
