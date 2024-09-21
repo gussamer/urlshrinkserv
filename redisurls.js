@@ -1,7 +1,7 @@
 var redisURL = process.env.REDISCLOUD_URL;
 var redis = require('redis');
 var client = redis.createClient(redisURL, {no_ready_check: true});
-client.auth(redisURL);
+client.connect();
 
 var Redisurls = {};
 
