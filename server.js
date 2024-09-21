@@ -1,5 +1,5 @@
 var express = require('express');
-var shurls = require('./shurls.js');
+var shurls = require('./redisurls.js');
 //todo: fix depends
 var app = express();
 var lp = process.env.PORT || 8080;
