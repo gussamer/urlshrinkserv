@@ -3,6 +3,7 @@ var redis = require('redis');
 var client = redis.createClient(redisURL, {no_ready_check: true});
 client.auth(redisURL);
 
+var Redisurls = {};
 
 Redisurls.createShurls = function(callback){
   mongo.connect(mongoURL,function(err,client){
