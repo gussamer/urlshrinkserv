@@ -87,4 +87,4 @@ Redisurls.getShurl = function(fshurl,callback){
   });
 };
 
-module.exports = Shurls;
+module.exports = Redisurls;
